@@ -1,12 +1,22 @@
-<% provide(:title, @user.full_name) %>
+<% if current_user.first_name == nil %>
+<span class="menu-label"><strong><% provide(:title, @user.name) %></strong></span>
+<% else %>
+<span class="menu-label"><strong><% provide(:title, @user.full_name) %></strong></span>
+<% end %>
 
 <div class="profile card" align="center">
 
-  <h1 class="card-header profile-header"><%= @user.first_name %> <%= @user.last_name %></h1>
+  <h1 class="card-header profile-header">
+    <% if current_user.first_name == nil %>
+    <span class="menu-label"><strong><%= current_user.name %></strong></span>
+    <% else %>
+    <span class="menu-label"><strong><%= current_user.full_name %></strong></span>
+    <% end %>
+  </h1>
   <%= gravatar_for @user, size: "300px"; %>
   <hr>
 
-  <!-- TODO display user demographics and information -->
+  <!-- TODO display more user demographics and information -->
 
   <ul style="list-style-type:none">
     <li><p><%= @user.email %></p></li>

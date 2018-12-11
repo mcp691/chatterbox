@@ -28,6 +28,7 @@
       </div>
     <% end -%>
       <%= f.submit "Log in", class: 'new-buttons' %>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     <% end %>
   </div>
 </div>

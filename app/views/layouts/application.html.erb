@@ -22,7 +22,7 @@
       <div class="dropdown profile-button">
         <span class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= gravatar_for current_user, size: "40px", class: "avatar"; %>
-          <% if current_user.first_name == "" %>
+          <% if current_user.first_name == nil %>
           <span class="menu-label"><strong><%= current_user.name %></strong></span>
           <% else %>
           <span class="menu-label"><strong><%= current_user.full_name %></strong></span>

@@ -80,7 +80,7 @@
       <br />
       <hr>
       <%= f.label :current_password %> <i class="text-muted">(Required to submit any changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Current Password' %>
+      <%= f.password_field :current_password, autocomplete: "on", class: 'form-control', placeholder: 'Current Password' %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
