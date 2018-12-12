@@ -40,3 +40,4 @@ gem 'rails-controller-testing'
 gem 'geocoder'
 gem 'whenever', require: false
 gem 'omniauth-facebook'
+gem "sentry-raven"
