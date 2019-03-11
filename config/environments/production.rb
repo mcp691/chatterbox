@@ -78,11 +78,6 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  # Sentry
-  Raven.configure do |config|
-    config.dsn = ENV['SENTRY_DSN']
-  end
-
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -94,7 +89,5 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = ['https://chatterbocks.herokuapp.com']
 
-  config.web_socket_server_url = ['wss://chatterbocks.herokuapp.com/cable']
-
-  config.force_ssl = true
+  config.web_socket_server_url = "wss://chatterbocks.herokuapp.com/cable"
 end
